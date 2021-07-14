@@ -1,5 +1,5 @@
 //
-// Created by kmtr on 13.07.2021.
+// Created by Raphael Burton on 7/14/21.
 //
 
 #include <iostream>
@@ -13,9 +13,9 @@ class Megaphone
 	private:
 		std::string _str;
 	public:
-		Megaphone();
-		~Megaphone(void);
-		void toUpperCase(std::string &str);
+		Megaphone(std::string str);
+		~Megaphone();
+		void toUpperCase();
 };
 
 #endif //EX00_MEGAPHONE_HPP

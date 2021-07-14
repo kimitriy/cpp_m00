@@ -17,6 +17,8 @@ HEADER		= megaphone.hpp
 SRC 		= 	megaphone.cpp \
 				main.cpp \
 
+#SRC 		= 	main.cpp
+
 OBJS		= ${SRC:.cpp=.o}
 
 CPP			= clang++

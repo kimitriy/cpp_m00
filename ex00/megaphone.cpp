@@ -1,18 +1,24 @@
 //
-// Created by kmtr on 13.07.2021.
+// Created by Raphael Burton on 7/14/21.
 //
 
 #include "megaphone.hpp"
 
-void Megaphone::toUpperCase(std::string &str)
+Megaphone::Megaphone(std::string str)
 {
-	int i;
+	_str = str;
+}
+
+Megaphone::~Megaphone() {};
+
+void Megaphone::toUpperCase()
+{
+	int     i;
 
 	i = 0;
-	while (i < str.length())
+	while(_str[i])
 	{
-		
+		std::cout << static_cast<char>(toupper(_str[i]));
 		i++;
 	}
-	std::cout << this->_str.
 }
