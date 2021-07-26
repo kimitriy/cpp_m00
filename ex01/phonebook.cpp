@@ -9,6 +9,11 @@ Phonebook::Phonebook(std::string str)
 	_str = str;
 }
 
+Phonebook::Phonebook(std::string str)
+{
+	_str = str;
+}
+
 Phonebook::~Phonebook() {};
 
 void Phonebook::toUpperCase()

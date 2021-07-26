@@ -12,15 +12,32 @@
 class Contact
 {
 	private:
-		std::string _first_name;
-		std::string _last_name;
-		std::string _nickname;
-		std::string _phone_number;
-		std::string _darkest_secret;
+		int	_indx;
+		std::string	_first_name;
+		std::string	_last_name;
+		std::string	_nickname;
+		std::string	_phone_number;
+		std::string	_darkest_secret;
 	public:
-		Contact();
+		//constructors
+		Contact(); //default constructor
 		~Contact();
-		void toUpperCase();
+
+		//setters
+		void	setIndx();
+		void	setFirstName();
+		void	setLastName();
+		void	setNickName();
+		void	setPhoneNumber();
+		void	setDarkestSecret();
+
+		//getters
+		int	getIndx();
+		std::string	getFirstName();
+		std::string	getLastName();
+		std::string	getNickName();
+		std::string	getPhoneNumber();
+		std::string	getDarkestSecret();
 };
 
 class Phonebook
