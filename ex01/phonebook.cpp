@@ -51,18 +51,25 @@ void Phonebook::addContact()
 	}
 	
 	std::string tmp;
+	
 	std::cout << "Please input a contact's first name!:";
 	std::getline(std::cin, tmp);
 	_phbk[i].setFirstName(tmp);
+
 	std::cout << "Please input a contact's last name!:";
+	std::getline(std::cin, tmp);
 	_phbk[i].setLastName(tmp);
+
 	std::cout << "Please input a contact's nickname!:";
+	std::getline(std::cin, tmp);
 	_phbk[i].setNickname(tmp);
+
 	std::cout << "Please input a contact's phone number!:";
-	std::cin >> tmp;
+	std::getline(std::cin, tmp);
 	_phbk[i].setPhoneNumber(tmp);
+
 	std::cout << "Please input a contact's darkest secret!:";
-	std::cin >> tmp;
+	std::getline(std::cin, tmp);
 	_phbk[i].setDarkestSecret(tmp);
 }
 

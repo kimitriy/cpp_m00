@@ -6,24 +6,17 @@
 
 //EXIT, ADD, SEARCH
 
-int		main(int argc, char **argv)
+int		main()
 {
-	std::string str;
-	int i;
+	Phonebook book;
+	std::string cmnd;
 
-	i = 1;
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	else
+	std::cout << BGRND_CYAN << "WElCOME TO PHONEBOOK!" << RESET << std::endl;
+	while (1)
 	{
-		while (i < argc)
-		{
-			str = str + argv[i];
-			i++;
-		}
-		Megaphone blabla(str);
-		blabla.toUpperCase();
-		std::cout << std::endl;
+		std::cout << "INPUT ANY COMMAND, PLEASE! USE CAPITAL LETTERS!" << FGRND_B_GREEN;
+ 		
 	}
+	
 	return (0);
 }
