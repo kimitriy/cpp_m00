@@ -2,7 +2,7 @@
 
 //default constructor
 Contact::Contact()
-	: _indx(0), _firstName('\0'), _lastName('\0'), _nickname('\0'), _phoneNumber('\0'), _darkestSecret('\0')
+	: m_indx(0), m_totalN(0), m_firstName('\0'), m_lastName('\0'), m_nickname('\0'), m_phoneNumber('\0'), m_darkestSecret('\0')
 {
 	
 }
@@ -13,61 +13,78 @@ Contact::~Contact() {};
 //setters
 void	Contact::setIndx(int indx)
 {
-	_indx = indx;
+	m_indx = indx;
+	m_totalN++;
 }
 
 void	Contact::setFirstName(std::string &firstName)
 {
-	_firstName = firstName;
+	m_firstName = firstName;
 }
 
 void	Contact::setLastName(std::string &lastName)
 {
-	_lastName = lastName;
+	m_lastName = lastName;
 }
 
 void	Contact::setNickname(std::string &nickname)
 {
-	_nickname = nickname;
+	m_nickname = nickname;
 }
 
 void	Contact::setPhoneNumber(std::string &phoneNumber)
 {
-	_phoneNumber = phoneNumber;
+	m_phoneNumber = phoneNumber;
 }
 
 void	Contact::setDarkestSecret(std::string &darkerstSecret)
 {
-	_darkestSecret = darkerstSecret;
+	m_darkestSecret = darkerstSecret;
 }
 
 //getters
 int	Contact::getIndx()
 {
-	return (_indx);
+	return (m_indx);
 }
 
-std::string	Contact::getFirstName()
+int	Contact::getTotalN()
 {
-	return (_firstName);
+	return (m_totalN);
 }
 
-std::string	Contact::getLastName()
-{
-	return (_lastName);
-}
+// std::string	Contact::getFirstName()
+// {
+// 	return (m_firstName);
+// }
 
-std::string	Contact::getNickName()
-{
-	return (_nickname);
-}
+// std::string	Contact::getLastName()
+// {
+// 	return (m_lastName);
+// }
 
-std::string	Contact::getPhoneNumber()
-{
-	return (_phoneNumber);
-}
+// std::string	Contact::getNickname()
+// {
+// 	return (m_nickname);
+// }
 
-std::string	Contact::getDarkestSecret()
+// std::string	Contact::getPhoneNumber()
+// {
+// 	return (m_phoneNumber);
+// }
+
+// std::string	Contact::getDarkestSecret()
+// {
+// 	return (m_darkestSecret);
+// }
+
+//m-methods
+void Contact::printContact()
 {
-	return (_darkestSecret);
+	std::cout << "Contact's index          : " << m_indx << std::endl;
+	std::cout << "Contact's first name     : " << m_firstName << std::endl;
+	std::cout << "Contact's last name      : " << m_lastName << std::endl;
+	std::cout << "Contact's nickname       : " << m_nickname << std::endl;
+	std::cout << "Contact's phone number   : " << m_phoneNumber << std::endl;
+	std::cout << "Contact's darkest secret : " << m_darkestSecret << std::endl;
 }

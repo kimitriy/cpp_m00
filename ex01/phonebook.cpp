@@ -5,30 +5,35 @@
 #include "phonebook.hpp"
 
 //default constructor
-Phonebook::Phonebook() {};
+Phonebook::Phonebook()
+{
+	m_n = 0;
+	m_totalN = 0;
+}
 
 //default destructor
 Phonebook::~Phonebook() {};
 
-// void Phonebook::addContact(Contact &cntct, int &i)
+//setter
+// void Phonebook::setN(int n)
 // {
-// 	cntct.setIndx(i);
-// 	std::string tmp;
-// 	std::cout << "Please input a contact's first name!:";
-// 	std::cin >> tmp;
-// 	cntct.setFirstName(tmp);
-// 	std::cout << "Please input a contact's last name!:";
-// 	std::cin >> tmp;
-// 	cntct.setLastName(tmp);
-// 	std::cout << "Please input a contact's nickname!:";
-// 	std::cin >> tmp;
-// 	cntct.setNickname(tmp);
-// 	std::cout << "Please input a contact's phone number!:";
-// 	std::cin >> tmp;
-// 	cntct.setPhoneNumber(tmp);
-// 	std::cout << "Please input a contact's darkest secret!:";
-// 	std::cin >> tmp;
-// 	cntct.setDarkestSecret(tmp);
+// 	m_n = n;
+// }
+
+// void Phonebook::setTotalN(int n)
+// {
+// 	m_totalN = n;
+// }
+
+//getter
+// int	Phonebook::getN()
+// {
+// 	return (m_n);
+// }
+
+// int	Phonebook::getTotalN()
+// {
+// 	return (m_totalN);
 // }
 
 void Phonebook::addContact()
@@ -38,42 +43,89 @@ void Phonebook::addContact()
 	i = 0;
 	while (i < 8)
 	{
-		if (_phbk[i].getIndx() == 0)
-			_phbk[i].setIndx(i + 1);
-		else if (_phbk[i].getIndx() == 8)
+		if (m_phbk[i].getIndx() == 0)
+		{
+			m_phbk[i].setIndx(i + 1);
+			m_n = i + 1;
+			break ;
+		}
+		else if (m_phbk[i + 1].getIndx() == 0 && i < 7)
+		{
+			i++;
+			m_phbk[i].setIndx(i + 1);
+			m_n = i + 2;
+			break ;
+		}
+		else if (i == 7 && m_phbk[i].getIndx() != 0)
 		{
 			i = 0;
-			_phbk[i].setIndx(i + 1);
+			m_phbk[i].setIndx(i + 1);
+			break ;
 		}
-		std::cout << "Please input a contact's first name!:";
-		
+		else if (m_phbk[i].getIndx() != 0 && m_phbk[i + 1].getIndx() != 0 && m_phbk[i].getTotalN() > m_phbk[i + 1].getTotalN())
+		{
+			i++;
+			m_phbk[i].setIndx(i + 1);
+			break ;
+		}
 		i++;
 	}
 	
 	std::string tmp;
 	
-	std::cout << "Please input a contact's first name!:";
+	std::cout << BGRND_CYAN << "Please input a contact's first name!: " << FGRND_R_GREEN;
 	std::getline(std::cin, tmp);
-	_phbk[i].setFirstName(tmp);
+	m_phbk[i].setFirstName(tmp);
 
-	std::cout << "Please input a contact's last name!:";
+	std::cout << BGRND_CYAN << "Please input a contact's last name!: " << FGRND_R_GREEN;
 	std::getline(std::cin, tmp);
-	_phbk[i].setLastName(tmp);
+	m_phbk[i].setLastName(tmp);
 
-	std::cout << "Please input a contact's nickname!:";
+	std::cout << BGRND_CYAN << "Please input a contact's nickname!: " << FGRND_R_GREEN;
 	std::getline(std::cin, tmp);
-	_phbk[i].setNickname(tmp);
+	m_phbk[i].setNickname(tmp);
 
-	std::cout << "Please input a contact's phone number!:";
+	std::cout << BGRND_CYAN << "Please input a contact's phone number!: " << FGRND_R_GREEN;
 	std::getline(std::cin, tmp);
-	_phbk[i].setPhoneNumber(tmp);
+	m_phbk[i].setPhoneNumber(tmp);
 
-	std::cout << "Please input a contact's darkest secret!:";
+	std::cout << BGRND_CYAN << "Please input a contact's darkest secret!: " << FGRND_R_GREEN;
 	std::getline(std::cin, tmp);
-	_phbk[i].setDarkestSecret(tmp);
+	m_phbk[i].setDarkestSecret(tmp);
+
+}
+
+void Phonebook::truncate(std::string &str)
+{
+	int	len;
+	len = str.length();
+	if (len < 10)
+	{
+		int	indnt;
+		indnt = 10 - len;
+		while (indnt > 0)
+		{
+			std::cout << " ";
+			indnt--;
+		}
+		std::cout << str << "|";
+	}
+	else if (len == 10)
+		std::cout << str << "|";
+	else if (len > 10)
+	{
+		std::string tmp;
+		tmp = str;
+		tmp.resize(9);
+		std::cout << tmp << ".|";
+	}
 }
 
 void Phonebook::searchContact()
 {
-	
+	std::cout << "|‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾|" << std::endl;
+	std::cout << "|     index|first name| last name|  nickname|" << std::endl;
+	std::cout << "|__________|__________|__________|__________|" << std::endl;
+
+
 }
