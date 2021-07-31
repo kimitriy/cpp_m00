@@ -73,11 +73,11 @@ class Contact
 		//getters
 		int	getIndx();
 		int	getTotalN();
-		// std::string	getFirstName();
-		// std::string	getLastName();
-		// std::string	getNickname();
-		// std::string	getPhoneNumber();
-		// std::string	getDarkestSecret();
+		std::string	getFirstName();
+		std::string	getLastName();
+		std::string	getNickname();
+		std::string	getPhoneNumber();
+		std::string	getDarkestSecret();
 
 		//m-methods
 		void printContact();
@@ -87,10 +87,10 @@ class Phonebook
 {
 	private:
 		Contact m_phbk[8];
-		int		m_n; //number of contacts in m_phbk[]
-		int		m_totalN;//number of contacts that have been added to m_phbk totally
+		
 		//private m-methods
-		void	truncate(std::string &str);
+		void	truncate(const std::string &str);
+		int		validIndex(const std::string &indx);
 	public:
 		//constructors
 		Phonebook();
@@ -98,12 +98,8 @@ class Phonebook
 		~Phonebook();
 
 		//setter
-		// void setN(int n);
-		// void setTotalN(int n);
 
 		//getter
-		// int	getN();
-		// int	getTotalN();
 
 		//public m-methods
 		void	addContact();

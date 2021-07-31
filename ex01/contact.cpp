@@ -2,7 +2,7 @@
 
 //default constructor
 Contact::Contact()
-	: m_indx(0), m_totalN(0), m_firstName('\0'), m_lastName('\0'), m_nickname('\0'), m_phoneNumber('\0'), m_darkestSecret('\0')
+	: m_indx(0), m_totalN(0), m_firstName("\0"), m_lastName("\0"), m_nickname("\0"), m_phoneNumber("\0"), m_darkestSecret("\0")
 {
 	
 }
@@ -53,30 +53,30 @@ int	Contact::getTotalN()
 	return (m_totalN);
 }
 
-// std::string	Contact::getFirstName()
-// {
-// 	return (m_firstName);
-// }
+std::string	Contact::getFirstName()
+{
+	return (m_firstName);
+}
 
-// std::string	Contact::getLastName()
-// {
-// 	return (m_lastName);
-// }
+std::string	Contact::getLastName()
+{
+	return (m_lastName);
+}
 
-// std::string	Contact::getNickname()
-// {
-// 	return (m_nickname);
-// }
+std::string	Contact::getNickname()
+{
+	return (m_nickname);
+}
 
-// std::string	Contact::getPhoneNumber()
-// {
-// 	return (m_phoneNumber);
-// }
+std::string	Contact::getPhoneNumber()
+{
+	return (m_phoneNumber);
+}
 
-// std::string	Contact::getDarkestSecret()
-// {
-// 	return (m_darkestSecret);
-// }
+std::string	Contact::getDarkestSecret()
+{
+	return (m_darkestSecret);
+}
 
 //m-methods
 void Contact::printContact()
