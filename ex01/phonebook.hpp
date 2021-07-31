@@ -86,8 +86,8 @@ class Contact
 class Phonebook
 {
 	private:
-		Contact m_phbk[8];
-		
+		Contact	m_phbk[8];
+		int		m_num;
 		//private m-methods
 		void	truncate(const std::string &str);
 		int		validIndex(const std::string &indx);

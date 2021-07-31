@@ -5,7 +5,11 @@
 #include "phonebook.hpp"
 
 //default constructor
-Phonebook::Phonebook() {};
+Phonebook::Phonebook()
+	: m_num(0)
+{
+
+}
 
 //default destructor
 Phonebook::~Phonebook() {};
@@ -26,12 +30,16 @@ void Phonebook::addContact()
 		if (m_phbk[i].getIndx() == 0)
 		{
 			m_phbk[i].setIndx(i + 1);
+			if (m_num < 8)
+				m_num++;
 			break ;
 		}
 		else if (m_phbk[i + 1].getIndx() == 0 && i < 7)
 		{
 			i++;
 			m_phbk[i].setIndx(i + 1);
+			if (m_num < 8)
+				m_num++;
 			break ;
 		}
 		else if (i == 7 && m_phbk[i].getIndx() != 0)
@@ -112,7 +120,7 @@ int	Phonebook::validIndex(const std::string &indx)
 			return (-1);
 	}
 	n = std::stoi(indx);
-	if (n <= 0 || n > 8)
+	if (n <= 0 || n > m_num)
 		return (-1);
 	return (n);
 }
@@ -139,10 +147,10 @@ void Phonebook::searchContact()
 	}
 	std::cout << std::endl;
 	std::string	indx;
-	std::cout << BGRND_CYAN << "Please input a contact's index: " << FGRND_R_GREEN;
+	std::cout << FGRND_R_PURPLE << "Please input a contact's index:" << RESET << " " << FGRND_R_GREEN;
 	std::getline(std::cin, indx);
 	if ((i = validIndex(indx)) > 0)
 		m_phbk[i - 1].printContact();
 	else
-		std::cout << BGRND_CYAN << "Index error. Inputed index is not a number or there is no such index." << std::endl;
+		std::cout << FGRND_B_BLACK << BGRND_RED<< "Index error. Inputed index is not a number or there is no such index." << std::endl;
 }

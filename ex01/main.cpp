@@ -14,7 +14,7 @@ int		main()
 	std::cout << FGRND_B_BLACK << BGRND_CYAN << "WElCOME TO THE PHONEBOOK!" << RESET << std::endl;
 	while (1)
 	{
-		std::cout << FGRND_B_BLACK << BGRND_CYAN << "INPUT ANY COMMAND, PLEASE! USE CAPITAL LETTERS!: " << RESET << FGRND_B_GREEN;
+		std::cout << FGRND_B_BLACK << BGRND_CYAN << "INPUT ANY COMMAND, PLEASE! USE CAPITAL LETTERS!:" << RESET << " " << FGRND_B_GREEN;
  		std::getline(std::cin, cmnd);
 		std::cout << RESET;
 		if (std::cin.eof())

@@ -81,10 +81,10 @@ std::string	Contact::getDarkestSecret()
 //m-methods
 void Contact::printContact()
 {
-	std::cout << "Contact's index          : " << m_indx << std::endl;
-	std::cout << "Contact's first name     : " << m_firstName << std::endl;
-	std::cout << "Contact's last name      : " << m_lastName << std::endl;
-	std::cout << "Contact's nickname       : " << m_nickname << std::endl;
-	std::cout << "Contact's phone number   : " << m_phoneNumber << std::endl;
-	std::cout << "Contact's darkest secret : " << m_darkestSecret << std::endl;
+	std::cout << FGRND_R_PURPLE << "Contact's index          : " << FGRND_R_GREEN << m_indx << std::endl;
+	std::cout << FGRND_R_PURPLE << "Contact's first name     : " << FGRND_R_GREEN << m_firstName << std::endl;
+	std::cout << FGRND_R_PURPLE << "Contact's last name      : " << FGRND_R_GREEN << m_lastName << std::endl;
+	std::cout << FGRND_R_PURPLE << "Contact's nickname       : " << FGRND_R_GREEN << m_nickname << std::endl;
+	std::cout << FGRND_R_PURPLE << "Contact's phone number   : " << FGRND_R_GREEN << m_phoneNumber << std::endl;
+	std::cout << FGRND_R_PURPLE << "Contact's darkest secret : " << FGRND_R_GREEN << m_darkestSecret << std::endl;
 }
