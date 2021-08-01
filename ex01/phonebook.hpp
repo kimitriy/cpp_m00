@@ -7,6 +7,8 @@
 # include <iostream>
 # include <string>
 # include <iomanip>
+# include <stdlib.h>
+# include <stdio.h>
 
 # define RESET "\033[0m"
 

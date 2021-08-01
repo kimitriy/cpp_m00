@@ -12,7 +12,7 @@
 
 NAME		= phonebook
 
-HEADER		= phonebook.hpp
+HEADER		= 	phonebook.hpp \
 
 SRC 		= 	phonebook.cpp \
 				contact.cpp \

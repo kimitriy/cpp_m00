@@ -3,6 +3,7 @@
 //
 
 #include "phonebook.hpp"
+// #include "utils.hpp"
 
 //default constructor
 Phonebook::Phonebook()
@@ -119,7 +120,8 @@ int	Phonebook::validIndex(const std::string &indx)
 		else
 			return (-1);
 	}
-	n = std::stoi(indx);
+	// n = std::stoi(indx);
+	n = atoi(indx.c_str());
 	if (n <= 0 || n > m_num)
 		return (-1);
 	return (n);
