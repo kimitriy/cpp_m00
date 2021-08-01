@@ -4,13 +4,16 @@
 
 #include "megaphone.hpp"
 
+//constructor
 Megaphone::Megaphone(std::string str)
 {
 	_str = str;
 }
 
+//destructor
 Megaphone::~Megaphone() {};
 
+//m-method
 void Megaphone::toUpperCase()
 {
 	int     i;

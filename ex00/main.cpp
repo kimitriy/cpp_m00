@@ -4,7 +4,7 @@
 
 #include "megaphone.hpp"
 
-int     main(int argc, char **argv)
+int		main(int argc, char **argv)
 {
 	std::string str;
 	int i;
