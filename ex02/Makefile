@@ -12,9 +12,10 @@
 
 NAME		= account
 
-HEADER		= Account.hpp
+HEADER		=	Account.hpp \
 
-SRC 		= 	tests.cpp \
+SRC 		= 	Account.cpp \
+				tests.cpp \
 
 OBJS		= ${SRC:.cpp=.o}
 
