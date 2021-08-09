@@ -1,3 +1,4 @@
+#include "utils.hpp"
 
 void	err_message(const std::string &err)
 {
