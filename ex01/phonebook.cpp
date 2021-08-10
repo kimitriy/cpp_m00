@@ -58,28 +58,63 @@ void Phonebook::addContact()
 		i++;
 	}
 	
+	std::string mssgs[6] = {
+		"Please input a contact's first name!: ",
+		"Please input a contact's last name!: ",
+		"Please input a contact's nickname!: ",
+		"Please input a contact's phone number!: ",
+		"Please input a contact's darkest secret!: ",
+		"You input must not be empty! Please, try again!"
+	};
+	
+	int		j = 0;
+	int		f = 0;
 	std::string tmp;
 	
-	std::cout << FGRND_R_PURPLE << "Please input a contact's first name!: " << FGRND_R_GREEN;
-	std::getline(std::cin, tmp);
-	m_phbk[i].setFirstName(tmp);
-
-	std::cout << FGRND_R_PURPLE << "Please input a contact's last name!: " << FGRND_R_GREEN;
-	std::getline(std::cin, tmp);
-	m_phbk[i].setLastName(tmp);
-
-	std::cout << FGRND_R_PURPLE << "Please input a contact's nickname!: " << FGRND_R_GREEN;
-	std::getline(std::cin, tmp);
-	m_phbk[i].setNickname(tmp);
-
-	std::cout << FGRND_R_PURPLE << "Please input a contact's phone number!: " << FGRND_R_GREEN;
-	std::getline(std::cin, tmp);
-	m_phbk[i].setPhoneNumber(tmp);
-
-	std::cout << FGRND_R_PURPLE << "Please input a contact's darkest secret!: " << FGRND_R_GREEN;
-	std::getline(std::cin, tmp);
-	m_phbk[i].setDarkestSecret(tmp);
-
+	while (j < 5)
+	{
+		while (1)
+		{
+			if (f == 0)
+			{
+				std::cout << FGRND_R_PURPLE << mssgs[j] << FGRND_R_GREEN;
+				std::getline(std::cin, tmp);
+				f = 1;
+			}
+			else
+			{
+				std::cout << FGRND_R_RED << mssgs[5] << RESET << std::endl;
+				std::cout << FGRND_R_PURPLE << mssgs[j] << FGRND_R_GREEN;
+				std::getline(std::cin, tmp);
+			}
+			if (!tmp.empty())
+			{
+				f = 0;
+				break ;
+			}
+		}
+		switch (j)
+		{
+		case 0:
+			m_phbk[i].setFirstName(tmp);
+			break;
+		case 1:
+			m_phbk[i].setLastName(tmp);
+			break;
+		case 2:
+			m_phbk[i].setNickname(tmp);
+			break;
+		case 3:
+			m_phbk[i].setPhoneNumber(tmp);
+			break;
+		case 4:
+			m_phbk[i].setDarkestSecret(tmp);
+			break;
+		default:
+			break;
+		}
+		j++;
+	}
 }
 
 void Phonebook::truncate(const std::string &str)
