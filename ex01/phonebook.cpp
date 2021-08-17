@@ -64,7 +64,7 @@ void Phonebook::addContact()
 		"Please input a contact's nickname!: ",
 		"Please input a contact's phone number!: ",
 		"Please input a contact's darkest secret!: ",
-		"You input must not be empty! Please, try again!"
+		"Your input must not be empty! Please, try again!"
 	};
 	
 	int		j = 0;
