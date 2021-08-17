@@ -21,7 +21,7 @@ int		main(int argc, char **argv)
 		}
 		Megaphone blabla(str);
 		blabla.toUpperCase();
-		std::cout << std::endl;
 	}
+	std::cout << std::endl;
 	return (0);
 }
